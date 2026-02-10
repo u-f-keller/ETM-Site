@@ -180,7 +180,7 @@
     <section class="py-16 px-4">
         <div class="max-w-7xl mx-auto">
             <div id="projects-container" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Projects will be loaded here -->
+                <!-- Projects will be loaded here by JavaScript -->
             </div>
             
             <div id="loading-skeleton" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -206,72 +206,9 @@
         </div>
     </section>
 
-    <!-- Project Modal -->
+    <!-- Project Modal (managed by JavaScript) -->
     <div id="project-modal" class="hidden fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-        <div class="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
-            <div class="sticky top-0 bg-white border-b border-gray-200 p-6 flex justify-between items-center">
-                <h3 id="modal-title" class="text-2xl font-bold text-gray-900"></h3>
-                <button id="close-modal" class="text-gray-400 hover:text-gray-600 transition">
-                    <i class="fas fa-times text-2xl"></i>
-                </button>
-            </div>
-            
-            <div class="p-6">
-                <img id="modal-image" src="" alt="" class="w-full h-64 object-cover rounded-xl mb-6">
-                
-                <div class="grid md:grid-cols-2 gap-4 mb-6">
-                    <div class="flex items-center space-x-3">
-                        <div class="w-10 h-10 bg-cyan-100 rounded-lg flex items-center justify-center">
-                            <i class="fas fa-calendar text-cyan-600"></i>
-                        </div>
-                        <div>
-                            <div class="text-sm text-gray-600">Год</div>
-                            <div id="modal-year" class="font-semibold text-gray-900"></div>
-                        </div>
-                    </div>
-                    
-                    <div class="flex items-center space-x-3">
-                        <div class="w-10 h-10 bg-cyan-100 rounded-lg flex items-center justify-center">
-                            <i class="fas fa-tag text-cyan-600"></i>
-                        </div>
-                        <div>
-                            <div class="text-sm text-gray-600">Категория</div>
-                            <div id="modal-category" class="font-semibold text-gray-900"></div>
-                        </div>
-                    </div>
-                    
-                    <div class="flex items-center space-x-3">
-                        <div class="w-10 h-10 bg-cyan-100 rounded-lg flex items-center justify-center">
-                            <i class="fas fa-building text-cyan-600"></i>
-                        </div>
-                        <div>
-                            <div class="text-sm text-gray-600">Клиент</div>
-                            <div id="modal-client" class="font-semibold text-gray-900"></div>
-                        </div>
-                    </div>
-                    
-                    <div class="flex items-center space-x-3">
-                        <div class="w-10 h-10 bg-cyan-100 rounded-lg flex items-center justify-center">
-                            <i class="fas fa-map-marker-alt text-cyan-600"></i>
-                        </div>
-                        <div>
-                            <div class="text-sm text-gray-600">Локация</div>
-                            <div id="modal-location" class="font-semibold text-gray-900"></div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="mb-6">
-                    <h4 class="font-semibold text-gray-900 mb-3">Описание проекта</h4>
-                    <div id="modal-description" class="text-gray-600 leading-relaxed"></div>
-                </div>
-                
-                <div id="modal-tags-container" class="mb-6">
-                    <h4 class="font-semibold text-gray-900 mb-3">Теги</h4>
-                    <div id="modal-tags" class="flex flex-wrap gap-2"></div>
-                </div>
-            </div>
-        </div>
+        <!-- Modal content will be managed by JavaScript -->
     </div>
 
     <!-- Footer -->
@@ -323,6 +260,7 @@
         </div>
     </footer>
 
-    <script src="js/projects.js"></script>
+    <!-- NEW: ES6 Module Import -->
+    <script type="module" src="/src/js/pages/projects-page.js"></script>
 </body>
 </html>

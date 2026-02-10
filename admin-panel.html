@@ -358,39 +358,6 @@
         </div>
     </section>
 
-    <!-- Success Modal -->
-    <div id="success-modal" class="hidden fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-        <div class="bg-white rounded-2xl p-8 max-w-md w-full text-center animate-fade-in">
-            <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <i class="fas fa-check text-green-600 text-3xl"></i>
-            </div>
-            <h3 class="text-2xl font-bold text-gray-900 mb-2">Успешно!</h3>
-            <p class="text-gray-600 mb-6">Проект был успешно добавлен</p>
-            <button id="close-success-modal" class="bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-8 py-3 rounded-lg hover:shadow-xl transition font-semibold">
-                Отлично
-            </button>
-        </div>
-    </div>
-
-    <!-- Delete Confirmation Modal -->
-    <div id="delete-modal" class="hidden fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-        <div class="bg-white rounded-2xl p-8 max-w-md w-full text-center">
-            <div class="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <i class="fas fa-exclamation-triangle text-red-600 text-3xl"></i>
-            </div>
-            <h3 class="text-2xl font-bold text-gray-900 mb-2">Подтвердите удаление</h3>
-            <p class="text-gray-600 mb-6">Вы уверены, что хотите удалить этот проект? Это действие нельзя отменить.</p>
-            <div class="flex gap-4">
-                <button id="cancel-delete" class="flex-1 px-6 py-3 rounded-lg border-2 border-gray-300 text-gray-700 hover:bg-gray-50 transition font-semibold">
-                    Отмена
-                </button>
-                <button id="confirm-delete" class="flex-1 bg-red-600 text-white px-6 py-3 rounded-lg hover:bg-red-700 transition font-semibold">
-                    Удалить
-                </button>
-            </div>
-        </div>
-    </div>
-
     <!-- Footer -->
     <footer class="bg-slate-900 text-white py-12 px-4 mt-20">
         <div class="max-w-7xl mx-auto text-center">
@@ -398,7 +365,7 @@
         </div>
     </footer>
 
-    <script src="js/admin.js"></script>
-    <script src="js/admin-extended.js"></script>
+    <!-- NEW: ES6 Module Import -->
+    <script type="module" src="/src/js/pages/admin.js"></script>
 </body>
 </html>

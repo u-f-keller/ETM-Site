@@ -381,7 +381,7 @@
             </div>
             
             <div id="partners-container" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-                <!-- Partners will be loaded here -->
+                <!-- Partners will be loaded here by JavaScript -->
             </div>
             
             <div id="partners-loading" class="text-center py-8">
@@ -403,7 +403,7 @@
             </div>
             
             <div id="certificates-container" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Certificates will be loaded here -->
+                <!-- Certificates will be loaded here by JavaScript -->
             </div>
             
             <div id="certificates-loading" class="text-center py-8">
@@ -412,63 +412,9 @@
         </div>
     </section>
 
-    <!-- Certificate Modal -->
+    <!-- Certificate Modal (managed by JavaScript) -->
     <div id="certificate-modal" class="hidden fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-        <div class="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
-            <div class="sticky top-0 bg-white border-b border-gray-200 p-6 flex justify-between items-center">
-                <h3 id="cert-modal-title" class="text-2xl font-bold text-gray-900"></h3>
-                <button id="close-cert-modal" class="text-gray-400 hover:text-gray-600 transition">
-                    <i class="fas fa-times text-2xl"></i>
-                </button>
-            </div>
-            
-            <div class="p-6">
-                <img id="cert-modal-image" src="" alt="" class="w-full max-h-[600px] object-contain rounded-xl mb-6">
-                
-                <div class="grid md:grid-cols-2 gap-4 mb-6">
-                    <div class="flex items-center space-x-3">
-                        <div class="w-10 h-10 bg-cyan-100 rounded-lg flex items-center justify-center">
-                            <i class="fas fa-hashtag text-cyan-600"></i>
-                        </div>
-                        <div>
-                            <div class="text-sm text-gray-600">Номер</div>
-                            <div id="cert-modal-number" class="font-semibold text-gray-900"></div>
-                        </div>
-                    </div>
-                    
-                    <div class="flex items-center space-x-3">
-                        <div class="w-10 h-10 bg-cyan-100 rounded-lg flex items-center justify-center">
-                            <i class="fas fa-calendar text-cyan-600"></i>
-                        </div>
-                        <div>
-                            <div class="text-sm text-gray-600">Дата выдачи</div>
-                            <div id="cert-modal-issued" class="font-semibold text-gray-900"></div>
-                        </div>
-                    </div>
-                    
-                    <div class="flex items-center space-x-3">
-                        <div class="w-10 h-10 bg-cyan-100 rounded-lg flex items-center justify-center">
-                            <i class="fas fa-clock text-cyan-600"></i>
-                        </div>
-                        <div>
-                            <div class="text-sm text-gray-600">Действителен до</div>
-                            <div id="cert-modal-expiry" class="font-semibold text-gray-900"></div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="mb-6">
-                    <h4 class="font-semibold text-gray-900 mb-3">Описание</h4>
-                    <div id="cert-modal-description" class="text-gray-600 leading-relaxed"></div>
-                </div>
-                
-                <div id="cert-modal-pdf-container" class="hidden">
-                    <a id="cert-modal-pdf" href="" target="_blank" class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-500 to-cyan-500 text-white rounded-lg hover:shadow-xl transition font-semibold">
-                        <i class="fas fa-download mr-2"></i>Скачать PDF
-                    </a>
-                </div>
-            </div>
-        </div>
+        <!-- Modal content will be managed by JavaScript -->
     </div>
 
     <!-- CTA Section -->
@@ -528,8 +474,6 @@
                     <p class="text-gray-600">г. Мурманск, ул. Промышленная, д. 1</p>
                 </div>
             </div>
-            
-
         </div>
     </section>
 
@@ -582,6 +526,7 @@
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
+    <!-- NEW: ES6 Module Import -->
+    <script type="module" src="/src/js/pages/main.js"></script>
 </body>
 </html>
