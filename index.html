@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ЭТМ - Инжиниринг и автоматизация | Мурманск</title>
+    <meta name="description" content="ООО ЭТМ - монтажные и пусконаладочные работы в сфере энергетики, разработка и наладка АСУТП в горнодобывающей промышленности">
+    
+    <!-- Favicon -->
+    <!-- <link rel="icon" type="images/png" href="favicon.png"> -->
+    <link rel="icon" href="images/logo_v1_without_txt.svg" type="image/svg+xml">
+
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+        }
+        
+        .text-gradient {
+            background: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .animate-fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .navbar-scroll {
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-scroll.scrolled {
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="navbar-scroll fixed w-full z-50 top-0">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="index.html" class="flex items-center space-x-3">
+                    <img src="images/logo-full.png" alt="ЭТМ" class="h-12 w-auto">
+                </a>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-white hover:text-cyan-400 transition">Главная</a>
+                    <a href="#services" class="text-white hover:text-cyan-400 transition">Услуги</a>
+                    <a href="#about" class="text-white hover:text-cyan-400 transition">О компании</a>
+                    <a href="projects.html" class="text-white hover:text-cyan-400 transition">Проекты</a>
+                    <a href="#contacts" class="text-white hover:text-cyan-400 transition">Контакты</a>
+                </div>
+                
+                <a href="projects.html" class="hidden md:block bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-6 py-2.5 rounded-lg hover:shadow-lg transition">
+                    Портфолио проектов
+                </a>
+                
+                <button id="mobile-menu-btn" class="md:hidden text-white">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-t border-slate-700">
+            <div class="px-4 py-4 space-y-3">
+                <a href="#home" class="block text-white hover:text-cyan-400 transition py-2">Главная</a>
+                <a href="#services" class="block text-white hover:text-cyan-400 transition py-2">Услуги</a>
+                <a href="#about" class="block text-white hover:text-cyan-400 transition py-2">О компании</a>
+                <a href="projects.html" class="block text-white hover:text-cyan-400 transition py-2">Проекты</a>
+                <a href="#contacts" class="block text-white hover:text-cyan-400 transition py-2">Контакты</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-gradient pt-32 pb-20 px-4 min-h-screen flex items-center">
+        <div class="max-w-7xl mx-auto w-full">
+            <div class="grid md:grid-cols-2 gap-12 items-center animate-fade-in">
+                <div>
+                    <h1 class="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
+                        <img src="images/logo-icon.png" alt="ЭТМ" class="inline-block h-16 md:h-20 w-auto mr-4 align-middle">
+                        <span class="align-middle">ЭТМ</span>
+                    </h1>
+                    <p class="text-2xl md:text-3xl text-cyan-400 font-semibold mb-6">
+                        Инжиниринг, автоматизация, монтаж
+                    </p>
+                    <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+                        Профессиональные монтажные и пусконаладочные работы. Разработка и внедрение АСУТП для горнодобывающей промышленности.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#services" class="bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-8 py-4 rounded-lg hover:shadow-2xl transition font-semibold">
+                            Наши услуги
+                        </a>
+                        <a href="projects.html" class="bg-white/10 backdrop-blur text-white px-8 py-4 rounded-lg hover:bg-white/20 transition border border-white/20 font-semibold">
+                            Портфолио проектов
+                        </a>
+                    </div>
+                    
+                    <!-- Stats -->
+                    <div class="grid grid-cols-3 gap-6 mt-12 pt-12 border-t border-white/10">
+                        <div>
+                            <div class="stat-number text-cyan-400">15+</div>
+                            <div class="text-gray-400 mt-2">Лет опыта</div>
+                        </div>
+                        <div>
+                            <div class="stat-number text-cyan-400">200+</div>
+                            <div class="text-gray-400 mt-2">Проектов</div>
+                        </div>
+                        <div>
+                            <div class="stat-number text-cyan-400">50+</div>
+                            <div class="text-gray-400 mt-2">Клиентов</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hidden md:block">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl blur-3xl opacity-30"></div>
+                        <div class="relative bg-slate-800/50 backdrop-blur p-8 rounded-2xl border border-slate-700">
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="bg-slate-700/50 p-6 rounded-xl">
+                                    <i class="fas fa-bolt text-cyan-400 text-3xl mb-3"></i>
+                                    <h3 class="text-white font-semibold mb-2">Энергетика</h3>
+                                    <p class="text-gray-400 text-sm">Электромонтаж и ПНР</p>
+                                </div>
+                                <div class="bg-slate-700/50 p-6 rounded-xl">
+                                    <i class="fas fa-microchip text-cyan-400 text-3xl mb-3"></i>
+                                    <h3 class="text-white font-semibold mb-2">АСУТП</h3>
+                                    <p class="text-gray-400 text-sm">Разработка и наладка</p>
+                                </div>
+                                <div class="bg-slate-700/50 p-6 rounded-xl">
+                                    <i class="fas fa-industry text-cyan-400 text-3xl mb-3"></i>
+                                    <h3 class="text-white font-semibold mb-2">Промышленность</h3>
+                                    <p class="text-gray-400 text-sm">Горнодобывающая отрасль</p>
+                                </div>
+                                <div class="bg-slate-700/50 p-6 rounded-xl">
+                                    <i class="fas fa-tools text-cyan-400 text-3xl mb-3"></i>
+                                    <h3 class="text-white font-semibold mb-2">Сервис</h3>
+                                    <p class="text-gray-400 text-sm">Обслуживание и поддержка</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 px-4 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                    Наши <span class="text-gradient">услуги</span>
+                </h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Комплексные решения для промышленных предприятий
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="card-hover bg-white p-8 rounded-2xl border border-gray-200 shadow-sm">
+                    <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-wrench text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Монтажные работы</h3>
+                    <p class="text-gray-600 mb-6">
+                        Профессиональный электромонтаж систем энергоснабжения, силового и осветительного оборудования для промышленных объектов.
+                    </p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li><i class="fas fa-check text-cyan-500 mr-2"></i>Электрические сети</li>
+                        <li><i class="fas fa-check text-cyan-500 mr-2"></i>Силовое оборудование</li>
+                        <li><i class="fas fa-check text-cyan-500 mr-2"></i>Кабельные линии</li>
+                    </ul>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="card-hover bg-white p-8 rounded-2xl border border-gray-200 shadow-sm">
+                    <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-cogs text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Пусконаладочные работы</h3>
+                    <p class="text-gray-600 mb-6">
+                        Комплексная наладка и испытания электротехнического оборудования, обеспечение стабильной работы систем.
+                    </p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li><i class="fas fa-check text-cyan-500 mr-2"></i>Наладка оборудования</li>
+                        <li><i class="fas fa-check text-cyan-500 mr-2"></i>Испытания систем</li>
+                        <li><i class="fas fa-check text-cyan-500 mr-2"></i>Ввод в эксплуатацию</li>
+                    </ul>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="card-hover bg-white p-8 rounded-2xl border border-gray-200 shadow-sm">
+                    <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-microchip text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Разработка АСУТП</h3>
+                    <p class="text-gray-600 mb-6">
+                        Проектирование и внедрение автоматизированных систем управления технологическими процессами.
+                    </p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li><i class="fas fa-check text-cyan-500 mr-2"></i>Проектирование систем</li>
+                        <li><i class="fas fa-check text-cyan-500 mr-2"></i>Программирование ПЛК</li>
+                        <li><i class="fas fa-check text-cyan-500 mr-2"></i>SCADA-системы</li>
+                    </ul>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="card-hover bg-white p-8 rounded-2xl border border-gray-200 shadow-sm">
+                    <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-industry text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Горнодобывающая промышленность</h3>
+                    <p class="text-gray-600 mb-6">
+                        Специализированные решения для предприятий горной отрасли, учитывающие специфику производства.
+                    </p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li><i class="fas fa-check text-cyan-500 mr-2"></i>Автоматизация процессов</li>
+                        <li><i class="fas fa-check text-cyan-500 mr-2"></i>Системы мониторинга</li>
+                        <li><i class="fas fa-check text-cyan-500 mr-2"></i>Диспетчеризация</li>
+                    </ul>
+                </div>
+                
+                <!-- Service 5 -->
+                <div class="card-hover bg-white p-8 rounded-2xl border border-gray-200 shadow-sm">
+                    <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-bolt text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Энергетические системы</h3>
+                    <p class="text-gray-600 mb-6">
+                        Проектирование, монтаж и обслуживание систем электроснабжения промышленных объектов.
+                    </p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li><i class="fas fa-check text-cyan-500 mr-2"></i>Электроснабжение</li>
+                        <li><i class="fas fa-check text-cyan-500 mr-2"></i>Резервирование</li>
+                        <li><i class="fas fa-check text-cyan-500 mr-2"></i>Энергоаудит</li>
+                    </ul>
+                </div>
+                
+                <!-- Service 6 -->
+                <div class="card-hover bg-white p-8 rounded-2xl border border-gray-200 shadow-sm">
+                    <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-headset text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Техническая поддержка</h3>
+                    <p class="text-gray-600 mb-6">
+                        Сервисное обслуживание, техническая поддержка и модернизация установленного оборудования.
+                    </p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li><i class="fas fa-check text-cyan-500 mr-2"></i>Обслуживание</li>
+                        <li><i class="fas fa-check text-cyan-500 mr-2"></i>Модернизация</li>
+                        <li><i class="fas fa-check text-cyan-500 mr-2"></i>Консультации</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 px-4 bg-gray-50">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                        О <span class="text-gradient">компании</span>
+                    </h2>
+                    <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                        ООО "ЭТМ" - ведущая инжиниринговая компания Мурманской области, специализирующаяся на комплексных решениях в области электротехнического монтажа и автоматизации производственных процессов.
+                    </p>
+                    <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                        Мы обладаем обширным опытом работы в энергетической отрасли и горнодобывающей промышленности, предлагая нашим клиентам современные технологические решения, соответствующие самым высоким стандартам качества.
+                    </p>
+                    
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-cyan-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-certificate text-cyan-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 mb-1">Сертифицированные специалисты</h4>
+                                <p class="text-gray-600">Команда профессионалов с подтвержденной квалификацией</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-cyan-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-award text-cyan-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 mb-1">Качество работ</h4>
+                                <p class="text-gray-600">Соблюдение всех норм и стандартов безопасности</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-cyan-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-clock text-cyan-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 mb-1">Соблюдение сроков</h4>
+                                <p class="text-gray-600">Четкое планирование и выполнение работ в срок</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="projects.html" class="inline-block bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-8 py-4 rounded-lg hover:shadow-xl transition font-semibold">
+                        Посмотреть наши проекты
+                    </a>
+                </div>
+                
+                <div class="grid grid-cols-2 gap-6">
+                    <div class="bg-white p-6 rounded-2xl shadow-lg">
+                        <div class="text-4xl font-bold text-gradient mb-2">100%</div>
+                        <div class="text-gray-600">Удовлетворенность клиентов</div>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-lg mt-8">
+                        <div class="text-4xl font-bold text-gradient mb-2">24/7</div>
+                        <div class="text-gray-600">Техническая поддержка</div>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-lg">
+                        <div class="text-4xl font-bold text-gradient mb-2">ISO</div>
+                        <div class="text-gray-600">Сертифицированы</div>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-lg mt-8">
+                        <div class="text-4xl font-bold text-gradient mb-2">500+</div>
+                        <div class="text-gray-600">Реализованных объектов</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section class="py-20 px-4 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                    Наши <span class="text-gradient">партнёры</span>
+                </h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Мы сотрудничаем с ведущими компаниями отрасли
+                </p>
+            </div>
+            
+            <div id="partners-container" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                <!-- Partners will be loaded here by JavaScript -->
+            </div>
+            
+            <div id="partners-loading" class="text-center py-8">
+                <i class="fas fa-spinner fa-spin text-4xl text-cyan-500"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section class="py-20 px-4 bg-gray-50">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                    <span class="text-gradient">Сертификаты</span> и лицензии
+                </h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Наша деятельность подтверждена всеми необходимыми документами
+                </p>
+            </div>
+            
+            <div id="certificates-container" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Certificates will be loaded here by JavaScript -->
+            </div>
+            
+            <div id="certificates-loading" class="text-center py-8">
+                <i class="fas fa-spinner fa-spin text-4xl text-cyan-500"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificate Modal (managed by JavaScript) -->
+    <div id="certificate-modal" class="hidden fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+        <!-- Modal content will be managed by JavaScript -->
+    </div>
+
+    <!-- CTA Section -->
+    <section class="py-20 px-4 hero-gradient">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+                Готовы начать проект?
+            </h2>
+            <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+                Свяжитесь с нами для обсуждения вашего проекта. Мы предложим оптимальное решение для ваших задач.
+            </p>
+            <div class="flex flex-wrap gap-4 justify-center">
+                <a href="#contacts" class="bg-white text-blue-600 px-8 py-4 rounded-lg hover:shadow-2xl transition font-semibold">
+                    Связаться с нами
+                </a>
+                <a href="tel:+78152000000" class="bg-white/10 backdrop-blur text-white px-8 py-4 rounded-lg hover:bg-white/20 transition border border-white/20 font-semibold">
+                    <i class="fas fa-phone mr-2"></i>+7 (815) 200-00-00
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacts Section -->
+    <section id="contacts" class="py-20 px-4 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                    <span class="text-gradient">Контакты</span>
+                </h2>
+                <p class="text-xl text-gray-600">
+                    Свяжитесь с нами удобным способом
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <div class="text-center p-8 bg-gray-50 rounded-2xl">
+                    <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-phone text-white text-2xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-gray-900 mb-2">Телефон</h3>
+                    <a href="tel:+78152000000" class="text-gray-600 hover:text-cyan-500 transition">+7 (815) 200-00-00</a>
+                </div>
+                
+                <div class="text-center p-8 bg-gray-50 rounded-2xl">
+                    <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-envelope text-white text-2xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-gray-900 mb-2">Email</h3>
+                    <a href="mailto:info@etm-murmansk.ru" class="text-gray-600 hover:text-cyan-500 transition">info@etm-murmansk.ru</a>
+                </div>
+                
+                <div class="text-center p-8 bg-gray-50 rounded-2xl">
+                    <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-map-marker-alt text-white text-2xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-gray-900 mb-2">Адрес</h3>
+                    <p class="text-gray-600">г. Мурманск, ул. Промышленная, д. 1</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white py-12 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <img src="images/logo-full.png" alt="ЭТМ" class="h-10 w-auto">
+                    </div>
+                    <p class="text-gray-400 text-sm">
+                        Инжиниринг, автоматизация, монтаж
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Навигация</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="#home" class="hover:text-cyan-400 transition">Главная</a></li>
+                        <li><a href="#services" class="hover:text-cyan-400 transition">Услуги</a></li>
+                        <li><a href="#about" class="hover:text-cyan-400 transition">О компании</a></li>
+                        <li><a href="projects.html" class="hover:text-cyan-400 transition">Проекты</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Услуги</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li>Монтажные работы</li>
+                        <li>Пусконаладочные работы</li>
+                        <li>Разработка АСУТП</li>
+                        <li>Техническая поддержка</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Контакты</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><i class="fas fa-phone mr-2"></i>+7 (815) 200-00-00</li>
+                        <li><i class="fas fa-envelope mr-2"></i>info@etm-murmansk.ru</li>
+                        <li><i class="fas fa-map-marker-alt mr-2"></i>г. Мурманск</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-slate-800 pt-8 text-center text-gray-400 text-sm">
+                <p>&copy; 2026 ООО "ЭТМ". Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- NEW: ES6 Module Import -->
+    <script type="module" src="src/js/pages/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+# Все запросы к /api/* направляем через index.php
+RewriteEngine On
+RewriteBase /new/api/
+
+# Если файл или папка существует — отдаём как есть
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Всё остальное → index.php
+RewriteRule ^(.*)$ index.php [QSA,L]
+
+# Правильный MIME-тип для JSON-ответов
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options "nosniff"
+</IfModule>

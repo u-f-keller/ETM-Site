@@ -1,0 +1,24 @@
+# Правильный MIME-тип для JavaScript модулей
+<IfModule mod_mime.c>
+    AddType text/javascript .js
+    AddType application/javascript .mjs
+</IfModule>
+
+# Запрет листинга директорий
+Options -Indexes
+
+# Защита конфиг-файлов
+<FilesMatch "\.(php|sql|md)$">
+    # PHP файлы выполняются нормально, но .sql и .md блокируем
+</FilesMatch>
+
+<FilesMatch "\.(sql|md|gitignore)$">
+    Require all denied
+</FilesMatch>
+
+# Защита папки api/config
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^api/config\.php$ - [F,L]
+    RewriteRule ^api/db\.php$ - [F,L]
+</IfModule>
