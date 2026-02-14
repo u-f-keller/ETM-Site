@@ -247,7 +247,7 @@ export class ProjectsAdmin {
     if (!this.listContainer) return;
 
     try {
-      loader.show(this.loadingEl, 'Загрузка проектов...');
+      if (this.loadingEl) this.loadingEl.style.display = '';
 
       const response = await api.get(API_ENDPOINTS.projects, {
         limit: 1000,
@@ -256,12 +256,12 @@ export class ProjectsAdmin {
 
       this.projects = response.data || [];
       
-      loader.hide(this.loadingEl);
+      if (this.loadingEl) this.loadingEl.style.display = 'none';
       this.displayProjects();
 
     } catch (error) {
       console.error('Error loading projects:', error);
-      loader.hide(this.loadingEl);
+      if (this.loadingEl) this.loadingEl.style.display = 'none';
       this.showNoProjects();
     }
   }

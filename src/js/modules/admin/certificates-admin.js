@@ -146,7 +146,7 @@ export class CertificatesAdmin {
     if (!this.listContainer) return;
 
     try {
-      loader.show(this.loadingEl, 'Загрузка сертификатов...');
+      if (this.loadingEl) this.loadingEl.style.display = '';
 
       const response = await api.get(API_ENDPOINTS.certificates, {
         limit: 1000,
@@ -155,12 +155,12 @@ export class CertificatesAdmin {
 
       this.certificates = response.data || [];
       
-      loader.hide(this.loadingEl);
+      if (this.loadingEl) this.loadingEl.style.display = 'none';
       this.displayCertificates();
 
     } catch (error) {
       console.error('Error loading certificates:', error);
-      loader.hide(this.loadingEl);
+      if (this.loadingEl) this.loadingEl.style.display = 'none';
     }
   }
 

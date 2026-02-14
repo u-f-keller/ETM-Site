@@ -2,17 +2,15 @@
 RewriteEngine On
 RewriteBase /new/api/
 
-# Пробросить заголовок Authorization в PHP
-# (shared-хостинги часто его стрипают)
-RewriteCond %{HTTP:Authorization} .+
-RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
-
 # Если файл или папка существует — отдаём как есть
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 
 # Всё остальное → index.php
 RewriteRule ^(.*)$ index.php [QSA,L]
+
+# Пробросить заголовок Authorization в PHP
+SetEnvIf Authorization "(.*)" HTTP_AUTHORIZATION=$1
 
 # Правильный MIME-тип для JSON-ответов
 <IfModule mod_headers.c>

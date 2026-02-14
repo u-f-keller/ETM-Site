@@ -139,7 +139,7 @@ export class PartnersAdmin {
     if (!this.listContainer) return;
 
     try {
-      loader.show(this.loadingEl, 'Загрузка партнёров...');
+      if (this.loadingEl) this.loadingEl.style.display = '';
 
       const response = await api.get(API_ENDPOINTS.partners, {
         limit: 1000,
@@ -148,12 +148,12 @@ export class PartnersAdmin {
 
       this.partners = response.data || [];
       
-      loader.hide(this.loadingEl);
+      if (this.loadingEl) this.loadingEl.style.display = 'none';
       this.displayPartners();
 
     } catch (error) {
       console.error('Error loading partners:', error);
-      loader.hide(this.loadingEl);
+      if (this.loadingEl) this.loadingEl.style.display = 'none';
     }
   }
 
