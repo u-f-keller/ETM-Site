@@ -3,8 +3,8 @@
  * CRUD операции с сертификатами в админ-панели
  */
 
-import { api } from '../config/api.js';
-import { API_ENDPOINTS, MESSAGES } from '../config/constants.js';
+import { api } from '../../config/api.js';
+import { API_ENDPOINTS, MESSAGES } from '../../config/constants.js';
 import { $, $$, getValue, setValue, empty, setHTML, on, addClass, removeClass } from '../utils/dom.js';
 import { sanitizeText, sanitizeURL } from '../utils/sanitize.js';
 import { showSuccess, showError } from '../utils/notification.js';
