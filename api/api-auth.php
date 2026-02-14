@@ -99,7 +99,9 @@ function auth_logout(string $method): void
         json_error('Метод не разрешён', 405);
     }
 
-    $header = $_SERVER['HTTP_AUTHORIZATION'] ?? '';
+    $header = $_SERVER['HTTP_AUTHORIZATION']
+           ?? $_SERVER['REDIRECT_HTTP_AUTHORIZATION']
+           ?? '';
     if (preg_match('/^Bearer\s+(.+)$/i', $header, $matches)) {
         $token = $matches[1];
         $pdo = get_db();
@@ -126,7 +128,9 @@ function auth_check(string $method): void
     }
 
     // Продлеваем токен
-    $header = $_SERVER['HTTP_AUTHORIZATION'] ?? '';
+    $header = $_SERVER['HTTP_AUTHORIZATION']
+           ?? $_SERVER['REDIRECT_HTTP_AUTHORIZATION']
+           ?? '';
     if (preg_match('/^Bearer\s+(.+)$/i', $header, $matches)) {
         $new_expires = date('Y-m-d H:i:s', time() + TOKEN_LIFETIME);
         $pdo = get_db();

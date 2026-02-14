@@ -95,7 +95,10 @@ function get_param(string $name, mixed $default = null): mixed
  */
 function check_auth(): ?int
 {
-    $header = $_SERVER['HTTP_AUTHORIZATION'] ?? '';
+    // Shared-хостинги могут передавать заголовок под разными именами
+    $header = $_SERVER['HTTP_AUTHORIZATION']
+           ?? $_SERVER['REDIRECT_HTTP_AUTHORIZATION']
+           ?? '';
 
     if (!preg_match('/^Bearer\s+(.+)$/i', $header, $matches)) {
         return null;
