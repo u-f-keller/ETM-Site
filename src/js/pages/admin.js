@@ -5,11 +5,9 @@
 
 import { auth, protectPage, setupSessionAutoExtend } from '../utils/auth.js';
 import { $, $$, on, addClass, removeClass } from '../utils/dom.js';
-/*
 import { initProjectsAdmin } from '../modules/admin/projects-admin.js';
 import { initPartnersAdmin } from '../modules/admin/partners-admin.js';
 import { initCertificatesAdmin } from '../modules/admin/certificates-admin.js';
-*/
 import { confirmModal } from '../components/modal.js';
 import { api } from '../config/api.js';
 import { showError } from '../utils/notification.js';
