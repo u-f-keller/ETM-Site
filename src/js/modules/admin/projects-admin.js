@@ -5,11 +5,11 @@
 
 import { api } from '../../config/api.js';
 import { API_ENDPOINTS, PROJECT_CATEGORIES, MESSAGES, FIELD_LIMITS } from '../../config/constants.js';
-import { $, $$, getValue, setValue, empty, setHTML, on, addClass, removeClass } from '../utils/dom.js';
-import { sanitizeHTML, sanitizeText } from '../utils/sanitize.js';
-import { showNotification, showSuccess, showError } from '../utils/notification.js';
-import { confirmModal } from '../components/modal.js';
-import { loader } from '../components/loader.js';
+import { $, $$, getValue, setValue, empty, setHTML, on, addClass, removeClass } from '../../utils/dom.js';
+import { sanitizeHTML, sanitizeText } from '../../utils/sanitize.js';
+import { showNotification, showSuccess, showError } from '../../utils/notification.js';
+import { confirmModal } from '../../components/modal.js';
+import { loader } from '../../components/loader.js';
 
 /**
  * Класс для управления проектами (админ)

@@ -5,11 +5,11 @@
 
 import { api } from '../../config/api.js';
 import { API_ENDPOINTS, MESSAGES } from '../../config/constants.js';
-import { $, $$, getValue, setValue, empty, setHTML, on, addClass, removeClass } from '../utils/dom.js';
-import { sanitizeText, sanitizeURL } from '../utils/sanitize.js';
-import { showSuccess, showError } from '../utils/notification.js';
-import { confirmModal } from '../components/modal.js';
-import { loader } from '../components/loader.js';
+import { $, $$, getValue, setValue, empty, setHTML, on, addClass, removeClass } from '../../utils/dom.js';
+import { sanitizeText, sanitizeURL } from '../../utils/sanitize.js';
+import { showSuccess, showError } from '../../utils/notification.js';
+import { confirmModal } from '../../components/modal.js';
+import { loader } from '../../components/loader.js';
 
 /**
  * Класс для управления сертификатами (админ)
